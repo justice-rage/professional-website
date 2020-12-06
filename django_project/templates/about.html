@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<head>
+<!-- Personal CSS file -->
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+</head>
+
+<div class="container" style="max-width: 42em;">
+<main role="main" class="inner cover">
+  <!--Profile Picture-->
+  <div class="text-center">
+    <img class="bd-img bd-img-lg featurette-image img-fluid mx-auto rounded-circle" src="{% static 'images/jpd_2019.png' %}" width="200" height="200" focusable="false" role="img" aria-label="Justice Peltier"><title>Justice Peltier</title><rect width="100%" height="100%" fill="#eee"/></img>
+</div>
+<!--//Profile Picture-->
+  <h1 class="cover-heading">Justice Douglas</h1>
+  <p class="lead text" style="color: rgba(255, 255, 255, .5);">Philosophy nut that stumbled upon programming.</p>
+  <p class="lead">An imaginative and strategic knowledge seeker with experience leading 
+    and collaborating with high-performace teams seeking to break into
+    the tech industry.</p>
+  <p class="lead">
+    <!--//Get In Touch-->
+    <a class="nav-item btn btn-primary font-weight-bold" href="mailto:justice.douglas@hey.com" style="background-color: white; border: 0; color: #1b1b1d;">Contact</a>
+    <a class="nav-item btn btn-primary font-weight-bold" href="{% static 'pdf/justice_douglas_resume.pdf' %}" style="background-color: white; border: 0; color: #1b1b1d;" target="_blank" type=application/pdf>Resume</a>
+    <!--//Get In Touch-->
+    <!--Social Proof Buttons-->
+    <div class="container my-2">
+      <a class="nav-item fab fa-github-square fa-2x" style="color: white; background-color: #1b1b1d;"href="https://github.com/mr-justice" target="_blank"></a>
+      <a class="nav-item fab fa-linkedin fa-2x" href="https://www.linkedin.com/in/justicedouglas/" target="_blank"></a>
+    </div>
+    <!--//Social Proof Buttons-->
+  </p>
+</main>
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<!--Introduction-->
+<main role="main">
+    <section class="jumbotron">
+            <!--Project Picture-->
+            <div>
+                <img class="img-fluid rounded" style="max-width: 100%; height: auto;" src="{% static project.image %}" alt="{{ project.description }}">
+            </div>
+            <!--//Project Picture-->
+            <hr>
+            <div class="text-left">
+                <h1>{{ project.title }}</h1>
+                <div>
+                    <p class="lead text" style="color: white;">
+                        Technology:&nbsp;
+                        {% for technology in project.technology.all %}
+                        <a id="project-detail" class="sub-nav" href="{% url 'projects:project_technology' technology.name %}" style="color: white;">
+                            {{ technology.name }}
+                        </a>&nbsp;
+                        {% endfor %}
+                    </p>
+                    <hr style="background-color: white;">
+                    <p>{{ project.body|linebreaks }}</p>
+                </div>
+            </div>
+    </section>
+</main>
+  <!--Introduction-->
+{% endblock %}

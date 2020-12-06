@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- Personal CSS file -->
+<link rel="stylesheet" href="{% static 'css/projects_index.css' %}">
+
+<main role="main">
+
+    <!-- Project Section -->
+    <div class="container">
+        <h1 class="text-center">Featured Projects</h1>
+        <div class="row">
+        {% for project in projects %}
+            <div class="col-md-4">
+                <div class="card mb-2 mt-2" style="background-color: #272729;">
+                    <img class="card-img-top" src="{% static project.image %}" alt="{{ project.description }}">
+                    <div class="card-body">
+                        <h4 class="card-title text-left">{{ project.title }}</h4>
+                        <hr style="background-color: white;">
+                        <p class="card-text white-text mb-4 text-left">{{ project.description }}</p>
+                        <!--Read More/Link Button-->
+                        <nav class="testing">
+                            <a class="sub-nav" href="{% url 'projects:project_detail' project.pk %}">
+                        </nav>
+                        <button class="btn btn-primary bg-transparent btn-block float-right" style="border: 0;">
+                        <h5 class="float-right" style="color: white;">Inquire <i class="fas fa-angle-double-right"></i></h5></button></a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+    
+</main>
+
+{% endblock %}
+
